@@ -121,6 +121,3 @@ OPENAI_MODEL=<your_openai_model>
 
 ## License
 This project is licensed under the MIT License.
-```
-
-You can now copy and paste this into your README file in GitHub.
