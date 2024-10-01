@@ -1,11 +1,10 @@
 
 
-
 # Nautical Distance Comparison using LLM and Routing Table
 
 This project compares nautical distances between two ports using an AI model (LLM) and a routing table. The script generates two outputs:
 1. A **comparison table** that stores the LLM and routing table distances for multiple port pairs.
-2. A **statistical report** that provides insights such as the minimum, maximum, mean, and standard deviation of the differences between the LLM-predicted distances and the actual routing distances.
+2. A **statistical report** that provides insights such as the mean absolute error (MAE), root mean squared error (RMSE), mean absolute percentage error (MAPE), and more, between the LLM-predicted distances and the actual routing distances.
 
 ## Features
 - Query distances between random port pairs using a Large Language Model (LLM).
@@ -14,19 +13,19 @@ This project compares nautical distances between two ports using an AI model (LL
 - Generate statistical summaries for the differences between the LLM's predictions and the routing table's distances.
 
 ## Prerequisites
-- Python 3.11
+- Python 3.11 or higher
 - The following Python libraries are required:
   - `openai_api`: For interacting with the LLM.
   - `routing`: For retrieving actual nautical distances between ports.
   - `dotenv`: For loading environment variables.
-  - `statistics`: For generating statistical reports.
+  - `statistics`, `numpy`, `scipy`: For generating statistical reports and performing correlation analysis.
 
 ## Environment Variables
-Make sure to define the `OPENAI_MODEL` in your environment by providing a `.env` file at the root of the project. This file should contain the following:
+Define the `OPENAI_MODEL` environment variable in a `.env` file at the root of the project. The file should contain the following entry:
 
-
-OPENAI_MODEL=<your_openai_model>
-
+```
+OPENAI_MODEL=<your_openai_model_key>
+```
 
 ## How It Works
 1. The script randomly selects pairs of ports.
@@ -70,54 +69,14 @@ OPENAI_MODEL=<your_openai_model>
    - **`table1_comparisons.json`**: Contains the comparison data.
    - **`table2_statistics.json`**: Contains the statistical analysis.
 
-## Example Output
-
-### `table1_comparisons.json`
-```json
-{
-    "Comparisons": [
-        {
-            "Comparison #": 1,
-            "Ports": {
-                "Port 1": "Singapore",
-                "Port 2": "Nagoya"
-            },
-            "LLM Distance (Nautical Miles)": 2600,
-            "Routing Table Distance": {
-                "Port 1": {
-                    "Port": "Singapore",
-                    "Country": "Singapore",
-                    "Latitude": 1.26,
-                    "Longitude": 103.8,
-                    "Score": 100
-                },
-                "Port 2": {
-                    "Port": "Nagoya",
-                    "Country": "Japan",
-                    "Latitude": 35.05,
-                    "Longitude": 136.86,
-                    "Score": 100
-                },
-                "Distance (Nautical Miles)": 2849.05
-            },
-            "Difference (LLM - Routing Distance)": -249.05
-        }
-    ]
-}
-```
-
-### `table2_statistics.json`
-```json
-{
-    "Statistics": {
-        "Total Comparisons": 3,
-        "Min Difference": -249.05,
-        "Max Difference": 100,
-        "Mean Difference": -74.26,
-        "Standard Deviation of Difference": 160.52
-    }
-}
-```
+## Statistical Metrics
+The script calculates the following metrics based on the difference between LLM-predicted and actual routing distances:
+- **Mean Absolute Error (MAE)**: Average of absolute differences.
+- **Root Mean Squared Error (RMSE)**: Square root of the mean of squared differences.
+- **Mean Absolute Percentage Error (MAPE)**: Percentage difference between LLM and actual distances.
+- **Interquartile Range (IQR)**: Spread of the middle 50% of the differences.
+- **Pearson Correlation**: Measures the linear relationship between LLM predictions and actual distances.
+- **R-Squared**: Proportion of variance in the actual distances explained by LLM predictions.
 
 ## License
 This project is licensed under the MIT License.
