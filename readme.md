@@ -1,4 +1,4 @@
-Here is the README in a code block for easy copy and paste:
+
 
 
 # Nautical Distance Comparison using LLM and Routing Table
