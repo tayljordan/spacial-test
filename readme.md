@@ -1,4 +1,4 @@
-```html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +15,7 @@
     </p>
 </body>
 </html>
-```
+
 
 # Nautical Distance Comparison using LLM and Routing Table
 
