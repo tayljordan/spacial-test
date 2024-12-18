@@ -1,4 +1,21 @@
-
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medium Article Link</title>
+</head>
+<body>
+    <p>
+        Below is the basis for a Medium article: 
+        <a href="https://medium.com/shipping-intel/can-openais-4-omni-calculate-distance-at-sea-c8c23a918194" target="_blank">
+            can-openais-4-omni-calculate-distance-at-sea
+        </a>.
+    </p>
+</body>
+</html>
+```
 
 # Nautical Distance Comparison using LLM and Routing Table
 
