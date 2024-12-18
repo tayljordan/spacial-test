@@ -1,27 +1,8 @@
+# Below code example is the basis for the following Medium article:
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <style>
-        p {
-            font-size: 20px;
-        }
-        a {
-            font-size: 20px;
-            text-decoration: none;
-            color: blue;
-        }
-    </style>
-</head>
-<body>
-    <p>
-        Below is the basis for a Medium article: 
-        <a href="https://medium.com/shipping-intel/can-openais-4-omni-calculate-distance-at-sea-c8c23a918194" target="_blank">
-            Can Open AI's 4 Omni Calculate Distance at Sea?
-        </a>
-    </p>
-</body>
-</html>
+<a href="https://medium.com/shipping-intel/can-openais-4-omni-calculate-distance-at-sea-c8c23a918194" target="_blank" style="font-size: 20px; text-decoration: none; color: blue;">
+    Can Open AI's 4 Omni Calculate Distance at Sea?
+</a>
 
 
 
